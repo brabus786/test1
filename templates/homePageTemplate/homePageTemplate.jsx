@@ -1,55 +1,40 @@
-import React from 'react';
-import styles from './homePageTemplate.module.scss';
-import AddBooks from '../../components/addBooks/addBooks';
-import Book from '../../components/book/book';
-import BookDescription from '../../components/bookDescription/bookDescription';
+import React, { useEffect } from 'react';
+import styles from './HomePageTemplate.module.scss';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import { UserAPI } from '../../UTILS/api';
+import { fetchUsers } from '../../store/actions/fetchUser';
+import { useDispatch } from 'react-redux';
 
 
-const homePageTemplate = ({addBookButton, onclick, register, books, handelSelect, book, editBook, deleteBook }) => {
+const HomePageTemplate = () => {
 
-
-    let bookComponent = null;
-    if(book){
-        bookComponent = (
-            <BookDescription 
-                id={book._id}
-                name={book.name}
-                author={book.author}
-                description={book.description}
-                price={book.price}
-                deleteBook={deleteBook}
-                editBook={editBook}
-            />
-        )
-    }
+    const dispatch = useDispatch();
     
+    useEffect(() => {
+        dispatch(fetchUsers(1));
+    },[]);
 
     return (
-        <div className={styles.books}>
-            <AddBooks
-                onclick={onclick}
-                register={register}
-                addBookButton={addBookButton}
-            />
-            { bookComponent }
-            <div className={styles.books__wrap}>
-                {
-                    books?.map((data,) => {
-                        return (
-                            <Book
-                                key={data._id}
-                                id={data._id}
-                                name={data.name}
-                                author={data.author}
-                                price={data.price}
-                                onclick={handelSelect}
-                            />
-                        )
-                    })
-                }
-            </div>
+        <div className={styles.HomePageTemplate}>
+            <Container>
+                <Grid
+                    container
+                    spacing={2}
+                >
+                    <Grid item xl={4}>
+                        <span>1</span>
+                    </Grid>
+                    <Grid item xl={4}>
+                        <span>1</span>
+                    </Grid>
+                    <Grid item xl={4}>
+                        <span>1</span>
+                    </Grid>
+                </Grid>
+            </Container>
         </div>
-    );
-};
+    )
+}
 
-export default homePageTemplate;
+export default HomePageTemplate;

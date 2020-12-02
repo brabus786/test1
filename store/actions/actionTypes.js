@@ -1,2 +1,3 @@
-export const COUNTER_INCRIMENT = 'COUNTER_INCRIMENT'; //Will add one to counter
-export const COUNTER_DECRIMENT = 'COUNTER_DECRIMENT'; //Will subscruct one from counter
+export const FETCH_USERS_START = 'FETCH_USER_START';
+export const FETCH_USERS_SUCCESS = 'FETCH_USER_SUCCESS';
+export const FETCH_USERS_FAIL = 'FETCH_USER_FAIL';
