@@ -1,0 +1,27 @@
+.bookDescription{
+    border:1px solid red;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 15px;
+
+    &__buttons{
+        border:1px solid red;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+       
+    }
+    &__edit{
+        color: green;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    &__delete{
+        color:red;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 16px;
+    }
+}

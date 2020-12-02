@@ -1,0 +1,12 @@
+.books{
+    border:1px solid green;
+
+    &__wrap{
+        border:1px solid green;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+}
